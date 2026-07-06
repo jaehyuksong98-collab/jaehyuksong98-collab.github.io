@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights — Jaehyuk Song</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bone:#F6F3EC;
+    --ink:#12181F;
+    --ink-soft:#4A5158;
+    --navy:#0F1A2B;
+    --navy-soft:#C9CFD8;
+    --brass:#9C7A4A;
+    --hairline:#12181F1a;
+    --max:920px;
+    --display:'Source Serif 4', serif;
+    --body:'Inter', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    background:var(--bone);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.55;
+  }
+  a{ color:inherit; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+
+  header.top{
+    background:var(--navy);
+    color:var(--bone);
+    padding:48px 0 40px;
+  }
+  header.top a.back{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.05em;
+    color:var(--navy-soft);
+    text-decoration:none;
+  }
+  header.top a.back:hover{ color:var(--brass); }
+  header.top h1{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(28px, 5vw, 38px);
+    margin:16px 0 0;
+  }
+
+  main{ padding:40px 0 64px; }
+
+  /* Category tabs */
+  .tabs{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:32px;
+    border-bottom:1px solid var(--hairline);
+    padding-bottom:0;
+  }
+  .tab{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    background:none;
+    border:none;
+    color:var(--ink-soft);
+    padding:10px 4px;
+    margin-right:20px;
+    cursor:pointer;
+    border-bottom:2px solid transparent;
+  }
+  .tab.active{
+    color:var(--ink);
+    border-bottom-color:var(--brass);
+  }
+  .tab:focus-visible{ outline:2px solid var(--brass); outline-offset:2px; }
+
+  /* Entries */
+  details.entry{
+    border-top:1px solid var(--hairline);
+    padding:16px 0;
+  }
+  details.entry:first-of-type{ border-top:none; }
+  details.entry summary{
+    cursor:pointer;
+    list-style:none;
+  }
+  details.entry summary::-webkit-details-marker{ display:none; }
+  .entry-date{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.05em;
+    color:var(--ink-soft);
+    display:block;
+    margin-bottom:4px;
+  }
+  .entry-headline{
+    font-weight:600;
+    font-size:15px;
+  }
+  .entry-body{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin:10px 0 0;
+    padding-left:0;
+  }
+
+  .empty{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--ink-soft);
+    padding:24px 0;
+  }
+</style>
+</head>
+<body>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="back" href="./index.html">&larr; BACK TO MAIN PAGE</a>
+      <h1>Insights</h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <nav class="tabs" id="tabs">
+        <button class="tab" data-cat="finance-ma">Finance &amp; M&amp;A</button>
+        <button class="tab" data-cat="ai">AI</button>
+        <button class="tab" data-cat="international">International Situation</button>
+      </nav>
+
+      <div id="entries"></div>
+    </div>
+  </main>
+
+<script>
+  // ---- Category definitions: value must match the "category" field in insights.json ----
+  const CATEGORIES = ["finance-ma", "ai", "international"];
+  let allEntries = [];
+  let activeCategory = CATEGORIES[0];
+
+  // Read ?cat= from the URL so a link from index.html can open directly
+  // into the right tab (e.g. insights.html?cat=ai)
+  const params = new URLSearchParams(window.location.search);
+  const requestedCat = params.get('cat');
+  if (requestedCat && CATEGORIES.includes(requestedCat)) {
+    activeCategory = requestedCat;
+  }
+
+  function renderTabs() {
+    document.querySelectorAll('.tab').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.cat === activeCategory);
+    });
+  }
+
+  function renderEntries() {
+    const container = document.getElementById('entries');
+    const filtered = allEntries
+      .filter(e => e.category === activeCategory)
+      // newest first
+      .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    if (filtered.length === 0) {
+      container.innerHTML = '<p class="empty">No entries yet in this category.</p>';
+      return;
+    }
+
+    container.innerHTML = filtered.map(e => `
+      <details class="entry">
+        <summary>
+          <span class="entry-date">${formatDate(e.date)}</span>
+          <span class="entry-headline">${escapeHtml(e.headline)}</span>
+        </summary>
+        <p class="entry-body">${escapeHtml(e.summary)}</p>
+      </details>
+    `).join('');
+  }
+
+  function formatDate(iso) {
+    const d = new Date(iso);
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  // Minimal escaping since content comes from an automated pipeline,
+  // not directly from user input in the browser — still safer to escape.
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  document.getElementById('tabs').addEventListener('click', (e) => {
+    const btn = e.target.closest('.tab');
+    if (!btn) return;
+    activeCategory = btn.dataset.cat;
+    renderTabs();
+    renderEntries();
+  });
+
+  // Fetch the data file. n8n updates insights.json in the repo each week;
+  // this page just reads whatever is currently committed — no backend needed.
+  fetch('./insights.json')
+    .then(res => res.json())
+    .then(data => {
+      allEntries = data;
+      renderTabs();
+      renderEntries();
+    })
+    .catch(() => {
+      document.getElementById('entries').innerHTML =
+        '<p class="empty">Could not load insights right now.</p>';
+    });
+</script>
+
+</body>
+</html>

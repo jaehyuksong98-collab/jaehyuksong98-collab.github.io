@@ -1,0 +1,20 @@
+[
+  {
+    "category": "finance-ma",
+    "date": "2026-07-06",
+    "headline": "[Headline — e.g. \"This week's M&A move worth watching\"]",
+    "summary": "[1-line summary of the news] — [1-2 lines: why it's interesting, in your own words.]"
+  },
+  {
+    "category": "ai",
+    "date": "2026-05-16",
+    "headline": "OpenAI's Financial Data Integration",
+    "summary": "OpenAI is enabling direct bank account connections in ChatGPT, pushing AI-driven financial advice into far more sensitive territory. The real story isn't the feature — it's that AI models giving real-time financial advice sit outside the compliance frameworks traditional advisors operate under, a gap that will either accelerate AI-native regulatory tools or force new legislation."
+  },
+  {
+    "category": "international",
+    "date": "2026-07-06",
+    "headline": "[Headline — e.g. \"A macro/geopolitical development worth tracking\"]",
+    "summary": "[1-line summary of the news] — [1-2 lines: your take.]"
+  }
+]

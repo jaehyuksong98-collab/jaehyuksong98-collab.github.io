@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DCF Analyzer — Microsoft (MSFT) | Jaehyuk Song</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bone:#F6F3EC;
+    --ink:#12181F;
+    --ink-soft:#4A5158;
+    --navy:#0F1A2B;
+    --navy-soft:#C9CFD8;
+    --brass:#9C7A4A;
+    --hairline:#12181F1a;
+    --max:760px;
+    --display:'Source Serif 4', serif;
+    --body:'Inter', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bone); color:var(--ink); font-family:var(--body); line-height:1.6; }
+  a{ color:inherit; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
+
+  header.top{ background:var(--navy); color:var(--bone); padding:48px 0 40px; }
+  header.top a.back{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.05em;
+    color:var(--navy-soft); text-decoration:none;
+  }
+  header.top a.back:hover{ color:var(--brass); }
+  header.top .eyebrow{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--brass); margin:20px 0 10px;
+  }
+  header.top h1{
+    font-family:var(--display); font-weight:500;
+    font-size:clamp(26px, 5vw, 34px); margin:0 0 12px;
+  }
+  header.top .meta{
+    font-family:var(--mono); font-size:12px; color:var(--navy-soft); display:flex; gap:20px; flex-wrap:wrap;
+  }
+
+  main{ padding:40px 0 64px; }
+  section{ padding:32px 0; border-bottom:1px solid var(--hairline); }
+  section:last-of-type{ border-bottom:none; }
+  h2{ font-family:var(--display); font-weight:500; font-size:19px; margin:0 0 16px; }
+  p{ margin:0 0 12px; font-size:15px; }
+
+  /* Valuation table */
+  table{ width:100%; border-collapse:collapse; font-size:14px; margin:8px 0; }
+  th, td{ text-align:left; padding:10px 8px; border-bottom:1px solid var(--hairline); }
+  th{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink-soft); font-weight:500; }
+  td.num{ font-family:var(--mono); }
+  .verdict-over{ color:#8a4a3a; }
+
+  .price-line{
+    font-family:var(--mono); font-size:14px; color:var(--ink-soft);
+    display:flex; gap:24px; flex-wrap:wrap; margin-bottom:8px;
+  }
+
+  details{ margin-top:8px; }
+  details summary{
+    cursor:pointer; font-family:var(--mono); font-size:12px;
+    letter-spacing:0.05em; color:var(--brass); text-transform:uppercase;
+    padding:8px 0;
+  }
+  details p{ font-size:14px; color:var(--ink-soft); }
+
+  .my-take{
+    background:var(--navy); color:var(--bone); padding:28px 24px; border-radius:2px;
+  }
+  .my-take .eyebrow{ font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--brass); margin:0 0 12px; }
+  .my-take p{ color:var(--navy-soft); font-size:15px; margin:0; }
+
+  .disclaimer{
+    font-family:var(--mono); font-size:11px; color:var(--ink-soft); line-height:1.7;
+  }
+
+  .btn-row{ display:flex; gap:12px; margin-top:8px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; font-family:var(--mono); font-size:12px;
+    letter-spacing:0.05em; text-transform:uppercase; text-decoration:none; padding:11px 18px;
+    border:1px solid var(--ink); color:var(--ink); background:transparent;
+  }
+  .btn:hover{ background:var(--ink); color:var(--bone); }
+</style>
+</head>
+<body>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="back" href="./index.html">&larr; BACK TO MAIN PAGE</a>
+      <p class="eyebrow">Featured Project — Output</p>
+      <h1>DCF Analyzer — Microsoft Corporation (MSFT)</h1>
+      <div class="meta">
+        <span>Run: 1 Mar 2026</span>
+        <span>Source: Yahoo Finance (yfinance)</span>
+        <span>AI Interpretation: Google Gemini</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <section>
+        <h2>Overview</h2>
+        <div class="price-line">
+          <span>Current Market Price: <strong style="color:var(--ink)">$392.74</strong></span>
+          <span>Base FCF (Most Recent): <strong style="color:var(--ink)">$71.61B</strong></span>
+        </div>
+        <p>Discounted Cash Flow valuation of Microsoft (MSFT), modeled across three scenarios to account for uncertainty in future growth. Free Cash Flow is discounted over a 5-year projection period, with terminal value calculated using the Gordon Growth Model.</p>
+      </section>
+
+      <section>
+        <h2>Valuation results</h2>
+        <table>
+          <thead>
+            <tr><th>Scenario</th><th>Intrinsic Value</th><th>vs. Current Price</th><th>Verdict</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Optimistic</td><td class="num">$232.43</td><td class="num">-40.8%</td><td class="verdict-over">Overvalued</td></tr>
+            <tr><td>Base</td><td class="num">$190.12</td><td class="num">-51.6%</td><td class="verdict-over">Overvalued</td></tr>
+            <tr><td>Pessimistic</td><td class="num">$154.48</td><td class="num">-60.7%</td><td class="verdict-over">Overvalued</td></tr>
+          </tbody>
+        </table>
+
+        <details>
+          <summary>Assumptions used</summary>
+          <p>
+            Growth rates: Optimistic 15% (strong historical FCF trajectory) · Base 10% (consensus analyst expectations) · Pessimistic 5% (slower growth in a saturated market).<br>
+            Discount rate: 10% (simplified WACC proxy — actual WACC estimated at 8-9%, meaning the model may slightly understate intrinsic value).<br>
+            Terminal growth rate: 3% (long-term GDP growth assumption). Projection period: 5 years.
+          </p>
+        </details>
+      </section>
+
+      <section>
+        <h2>AI-generated interpretation</h2>
+        <p>All three scenarios price Microsoft well below its current market level — even the optimistic case implies 40.8% downside. The gap points to the market pricing in AI-driven growth (Azure, Copilot) and margin expansion far beyond what a standard 5-year DCF captures, effectively betting on a longer high-growth runway and a lower risk premium than this model assumes.</p>
+        <details>
+          <summary>Read full AI interpretation</summary>
+          <p>Our Discounted Cash Flow (DCF) analysis indicates that Microsoft's current market price of $392.74 may be significantly overvalued based on fundamental cash flow projections. The base case scenario, utilizing a 10% free cash flow growth rate, yields an intrinsic value of $190.12, representing a 51.6% downside from the current price. Even under an optimistic scenario with a 15% annual growth rate for the next five years, the valuation reaches only $232.43, still 40.8% below the market price.</p>
+          <p>The primary driver for this discrepancy appears to be the market embedding a substantial premium for factors not fully captured by a conventional five-year DCF — the transformative potential of generative AI across Microsoft's product suite, sustained hyper-growth in Azure, and potential long-term margin expansion. The market is effectively pricing in a much longer high-growth period and a lower risk profile than this model assumes.</p>
+          <p>For the market price to be justified, Microsoft must not only meet but dramatically outperform even the optimistic growth projections for an extended period. The valuation is heavily reliant on successful, widespread, highly profitable monetization of its AI initiatives — any stumble in execution or shift in the competitive landscape could trigger a significant repricing.</p>
+        </details>
+      </section>
+
+      <section class="my-take">
+        <p class="eyebrow">My take</p>
+        <p>[Add your own read on this here — e.g. do you agree the market is pricing in an AI premium, where do you think the model's assumptions are too conservative or too aggressive, what would you check next (multi-stage growth model, real WACC calculation, sensitivity analysis)? 2-4 sentences is enough.]</p>
+      </section>
+
+      <section>
+        <h2>Limitations</h2>
+        <p class="disclaimer">
+          Simplified 5-year FCF projection · Discount rate approximated, not calculated from market data · Does not account for qualitative factors (brand, regulation, competition) · Past FCF growth does not guarantee future performance · Built for portfolio/educational purposes, not investment advice.
+        </p>
+        <div class="btn-row">
+          <a class="btn" href="https://github.com/jaehyuksong98-collab/dcf-analyzer" target="_blank" rel="noopener">View source on GitHub</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</body>
+</html>
