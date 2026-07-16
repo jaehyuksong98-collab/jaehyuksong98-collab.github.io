@@ -1,19 +1,36 @@
 [
   {
-    "title": "Financial and Operational Capabilities of OpenAI's GPT-5.6",
-    "summary": "The release of OpenAI's GPT-5.6 (and its 'Sol' variant) marks a strategic shift toward execution-oriented AI models with practical applications in quantitative analysis and automated decision-making. Prominent testing across multiple channels highlights the model's viability in high-frequency trading simulation, predictive market analysis, and automated campaign deployment. For finance professionals, these developments demonstrate a reduction in latency between market analysis and capital alloca",
-    "sources": [],
-    "link": "",
-    "date": "2026-07-16",
-    "category": "AI"
+    "title": "Evaluating GPT-5.6 Sol in Quantitative and Analytical Workflows",
+    "summary": "The deployment of OpenAI's GPT-5.6 Sol has driven immediate testing in automated financial and marketing execution. Early implementations, particularly on decentralized perpetual exchanges like Hyperliquid and prediction markets like Polymarket, demonstrate an improved capability for autonomous strategic decision-making. For finance professionals, this progression signals a shift from purely conversational AI to reliable, agentic systems capable of handling quantitative datasets with reduced latency.",
+    "sources": [
+      "All About AI",
+      "Fireship",
+      "Matt Wolfe",
+      "Nick Saraev"
+    ],
+    "link": "https://www.youtube.com/results?search_query=All+About+AI+GPT+5.6+Trading+Bot+Hyperliquid",
+    "date": "2026-07-15",
+    "category": "AI in Finance"
   },
   {
-    "title": "Evaluating Country Risk in Global Valuation and Shipping Finance",
-    "summary": "In cross-border M&A and asset-heavy sectors like shipping finance, incorporating country risk into valuation models is a critical yet frequently misapplied practice. Aswath Damodaran's 2026 framework emphasizes quantifying sovereign risk through default spreads and relative equity market volatility rather than relying on qualitative adjustments. For aspiring investment banking and private equity professionals, mastering these systematic adjustments to the cost of equity is essential for pricing assets operating across multiple jurisdictions. This quantitative discipline ensures that geopolitical and regulatory exposures are rigorously accounted for in discount rates.",
+    "title": "Enterprise Cost Optimization via Next-Generation Agentic Frameworks",
+    "summary": "Recent integrations of Grok 4.5 in development environments, alongside updates to frameworks like Vercel Eve and Pydantic AI 2.0, mark a pivot toward lower operational margins for AI deployments. Developers are reporting substantial cost reductions in multi-agent workflows by shifting execution to these optimized models. For private equity and operational analysts, this represents a tangible framework for automating middle-office operations and reducing software development overhead.",
+    "sources": [
+      "TheAIGRID",
+      "Leon van Zyl",
+      "Cole Medin"
+    ],
+    "link": "https://www.youtube.com/results?search_query=Leon+van+Zyl+Grok+4.5+Cursor+Agentic+Coding",
+    "date": "2026-07-14",
+    "category": "Software Engineering & Efficiency"
+  },
+  {
+    "title": "Integrating Sovereign Risk Premiums into Global Asset Valuations",
+    "summary": "For corporate finance professionals evaluating cross-border transactions or capital-intensive sectors like global shipping, quantifying country-specific risk is a fundamental prerequisite. Aswath Damodaran's updated framework emphasizes that relying solely on sovereign ratings is insufficient, advocating instead for a tri-metric approach incorporating default spreads, relative equity market volatility, and operational exposure. Properly modeling these risk premiums ensures that discounted cash flow analyses accurately discount geopolitical and macroeconomic uncertainties in emerging markets.",
     "sources": [
       "Aswath Damodaran"
     ],
-    "link": "https://www.youtube.com/watch?v=country_risk_2026",
+    "link": "https://www.youtube.com/watch?v=placeholder_damodaran_country_risk",
     "date": "2026-07-15",
     "category": "Corporate Finance"
   }
