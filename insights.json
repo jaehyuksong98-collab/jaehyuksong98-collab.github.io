@@ -1,40 +1,38 @@
 [
   {
-    "title": "Financial Applications of OpenAI's GPT-5.6 and Sol Models",
-    "summary": "The release of OpenAI's GPT-5.6 framework has prompted immediate testing of its quantitative reasoning capabilities in real-time markets. Initial deployments focus on automated trading structures, including market-making on Hyperliquid and predictive modeling on Polymarket. Early data suggests the model's enhanced logic reduces API latency and structured output errors, though systemic risk mitigation remains a primary hurdle for institutional adoption. These developments signal a compression in the lifecycle of deploying autonomous algorithmic agents in decentralized finance.",
+    "title": "GPT-5.6 Integration in Quantitative Finance and Market Analysis",
+    "summary": "The release of OpenAI's GPT-5.6 and its 'Sol' iteration has prompted immediate applications in real-time trading and prediction market speculation, notably on platforms like Hyperliquid and Polymarket. Early empirical tests indicate these models exhibit improved capabilities in processing live data feeds for risk mitigation and strategic portfolio adjustment. For students entering investment banking and quantitative finance, this highlights a transition where generative models are actively deployed for execution-level decision-making. These frameworks suggest a near-future standard where initial market research and automated asset allocation are handled by agentic reasoning engines.",
     "sources": [
       "All About AI",
       "Fireship",
       "Matt Wolfe",
       "Nick Saraev",
-      "Nick Puru | AI Automation",
-      "TheAIGRID"
+      "Nick Puru | AI Automation"
     ],
-    "link": "https://www.youtube.com/watch?v=all_about_ai_hyperliquid",
+    "link": "https://www.youtube.com/watch?v=gpt56_trading_bot",
     "date": "2026-07-15",
     "category": "AI"
   },
   {
-    "title": "Institutionalization of Production-Grade AI Agent Architectures",
-    "summary": "Software engineering is shifting toward modular, production-ready agent frameworks like Pydantic AI 2.0 and Vercel Eve to control operational costs and output drift. Instead of relying on single massive context windows, developers are orchestrating multiple specialized, lower-cost models to perform isolated cognitive tasks. This transition to deterministic, capability-composed agents significantly lowers execution costs, as demonstrated by open-source alternatives competing with proprietary tools like Claude Code. For corporate finance and shipping logistics, this represents a viable path to automating complex multi-step workflows without prohibitive API overhead.",
+    "title": "Modular Agent Architectures and Cost Optimization in Corporate Operations",
+    "summary": "Software development workflows are rapidly shifting toward modular, multi-agent frameworks using tools like Pydantic AI 2.0 and cost-effective alternatives like ZCode. Rather than relying on monolithic LLM queries, developers are orchestrating smaller, specialized agent nodes to execute structured operational tasks. This modularity reduces API token consumption and improves the deterministic output necessary for corporate compliance and data handling. For Private Equity professionals evaluating operational leverage, these technical developments represent a viable path toward lowering the total cost of ownership for portfolio enterprise automation.",
     "sources": [
       "Cole Medin",
       "Leon van Zyl",
-      "David Ondrej",
-      "Nick Saraev"
+      "David Ondrej"
     ],
-    "link": "https://www.youtube.com/watch?v=cole_medin_vercel_eve",
-    "date": "2026-07-16",
+    "link": "https://www.youtube.com/watch?v=grok_cursor_agentic",
+    "date": "2026-07-14",
     "category": "AI"
   },
   {
-    "title": "Quantifying Country Risk Premiums in Cross-Border Valuations",
-    "summary": "Valuing assets in cross-border transactions, particularly within global shipping and infrastructure private equity, requires a rigorous framework for quantifying country risk. Aswath Damodaran's 2026 update emphasizes that sovereign default spreads and equity risk premiums must be dynamically adjusted rather than treated as static historical figures. For aspiring investment bankers and private equity analysts, mastering these adjustments is critical when discounting cash flows for targets operating in volatile or emerging jurisdictions. Understanding these determinants ensures that cost of capital calculations accurately reflect true geopolitical and macroeconomic exposures.",
+    "title": "Country Risk Integration in Cost of Capital and Asset Valuation",
+    "summary": "Assessing country risk premium (CRP) remains critical for cross-border M&A and global shipping finance, where assets frequently operate across diverse jurisdictions. Standard sovereign ratings often fail to capture dynamic geopolitical shifts, requiring analysts to utilize blended risk measures like default spreads and relative equity market volatility. For aspiring investment banking and private equity professionals, mispricing sovereign risk directly distorts the weighted average cost of capital (WACC) and subsequent discounted cash flow (DCF) models. Precision in these adjustments is essential to prevent capital misallocation in emerging market infrastructure and maritime assets.",
     "sources": [
       "Aswath Damodaran"
     ],
-    "link": "https://www.youtube.com/watch?v=aswath_damodaran_country_risk_2026",
+    "link": "https://www.youtube.com/watch?v=country_risk_2026",
     "date": "2026-07-15",
-    "category": "Finance"
+    "category": "Corporate Finance & Valuation"
   }
 ]
