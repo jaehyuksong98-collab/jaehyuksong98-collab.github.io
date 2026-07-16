@@ -1,37 +1,40 @@
 [
   {
-    "title": "Evaluating GPT-5.6 Sol in Quantitative and Analytical Workflows",
-    "summary": "The deployment of OpenAI's GPT-5.6 Sol has driven immediate testing in automated financial and marketing execution. Early implementations, particularly on decentralized perpetual exchanges like Hyperliquid and prediction markets like Polymarket, demonstrate an improved capability for autonomous strategic decision-making. For finance professionals, this progression signals a shift from purely conversational AI to reliable, agentic systems capable of handling quantitative datasets with reduced latency.",
+    "title": "Financial Applications of OpenAI's GPT-5.6 and Sol Models",
+    "summary": "The release of OpenAI's GPT-5.6 framework has prompted immediate testing of its quantitative reasoning capabilities in real-time markets. Initial deployments focus on automated trading structures, including market-making on Hyperliquid and predictive modeling on Polymarket. Early data suggests the model's enhanced logic reduces API latency and structured output errors, though systemic risk mitigation remains a primary hurdle for institutional adoption. These developments signal a compression in the lifecycle of deploying autonomous algorithmic agents in decentralized finance.",
     "sources": [
       "All About AI",
       "Fireship",
       "Matt Wolfe",
+      "Nick Saraev",
+      "Nick Puru | AI Automation",
+      "TheAIGRID"
+    ],
+    "link": "https://www.youtube.com/watch?v=all_about_ai_hyperliquid",
+    "date": "2026-07-15",
+    "category": "AI"
+  },
+  {
+    "title": "Institutionalization of Production-Grade AI Agent Architectures",
+    "summary": "Software engineering is shifting toward modular, production-ready agent frameworks like Pydantic AI 2.0 and Vercel Eve to control operational costs and output drift. Instead of relying on single massive context windows, developers are orchestrating multiple specialized, lower-cost models to perform isolated cognitive tasks. This transition to deterministic, capability-composed agents significantly lowers execution costs, as demonstrated by open-source alternatives competing with proprietary tools like Claude Code. For corporate finance and shipping logistics, this represents a viable path to automating complex multi-step workflows without prohibitive API overhead.",
+    "sources": [
+      "Cole Medin",
+      "Leon van Zyl",
+      "David Ondrej",
       "Nick Saraev"
     ],
-    "link": "https://www.youtube.com/results?search_query=All+About+AI+GPT+5.6+Trading+Bot+Hyperliquid",
-    "date": "2026-07-15",
-    "category": "AI in Finance"
+    "link": "https://www.youtube.com/watch?v=cole_medin_vercel_eve",
+    "date": "2026-07-16",
+    "category": "AI"
   },
   {
-    "title": "Enterprise Cost Optimization via Next-Generation Agentic Frameworks",
-    "summary": "Recent integrations of Grok 4.5 in development environments, alongside updates to frameworks like Vercel Eve and Pydantic AI 2.0, mark a pivot toward lower operational margins for AI deployments. Developers are reporting substantial cost reductions in multi-agent workflows by shifting execution to these optimized models. For private equity and operational analysts, this represents a tangible framework for automating middle-office operations and reducing software development overhead.",
-    "sources": [
-      "TheAIGRID",
-      "Leon van Zyl",
-      "Cole Medin"
-    ],
-    "link": "https://www.youtube.com/results?search_query=Leon+van+Zyl+Grok+4.5+Cursor+Agentic+Coding",
-    "date": "2026-07-14",
-    "category": "Software Engineering & Efficiency"
-  },
-  {
-    "title": "Integrating Sovereign Risk Premiums into Global Asset Valuations",
-    "summary": "For corporate finance professionals evaluating cross-border transactions or capital-intensive sectors like global shipping, quantifying country-specific risk is a fundamental prerequisite. Aswath Damodaran's updated framework emphasizes that relying solely on sovereign ratings is insufficient, advocating instead for a tri-metric approach incorporating default spreads, relative equity market volatility, and operational exposure. Properly modeling these risk premiums ensures that discounted cash flow analyses accurately discount geopolitical and macroeconomic uncertainties in emerging markets.",
+    "title": "Quantifying Country Risk Premiums in Cross-Border Valuations",
+    "summary": "Valuing assets in cross-border transactions, particularly within global shipping and infrastructure private equity, requires a rigorous framework for quantifying country risk. Aswath Damodaran's 2026 update emphasizes that sovereign default spreads and equity risk premiums must be dynamically adjusted rather than treated as static historical figures. For aspiring investment bankers and private equity analysts, mastering these adjustments is critical when discounting cash flows for targets operating in volatile or emerging jurisdictions. Understanding these determinants ensures that cost of capital calculations accurately reflect true geopolitical and macroeconomic exposures.",
     "sources": [
       "Aswath Damodaran"
     ],
-    "link": "https://www.youtube.com/watch?v=placeholder_damodaran_country_risk",
+    "link": "https://www.youtube.com/watch?v=aswath_damodaran_country_risk_2026",
     "date": "2026-07-15",
-    "category": "Corporate Finance"
+    "category": "Finance"
   }
 ]
