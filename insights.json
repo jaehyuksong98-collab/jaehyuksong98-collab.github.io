@@ -1,48 +1,51 @@
 [
   {
-    "title": "Empirical Trading Performance of OpenAI GPT-5.6 Sol",
-    "summary": "The deployment of OpenAI's GPT-5.6 Sol has initiated immediate quantitative testing across decentralized finance protocols like Hyperliquid and predictive markets like Polymarket. Early implementations demonstrate that the model's advanced reasoning capabilities allow it to execute profitable automated trading strategies under real-world constraints. For investment banking analysts, this shifts the utility of LLMs from basic semantic search to complex market forecasting and quantitative decision-making. This evolution signals a potential reduction in the operational overhead required for proprietary asset analysis and corporate valuation modeling.",
+    "title": "Emergence of Kimi K3 in Quantitative Predictive Performance",
+    "summary": "The launch of Kimi K3 has demonstrated significant utility in both rapid application development and high-yield predictive modeling, illustrated by a documented 6,871% return on Polymarket. Analysts are evaluating Kimi K3's reasoning architecture against legacy models like GPT-5.6 for proprietary trading and financial forecasting. For private equity and investment banking, this signals a shift toward highly accessible, low-latency quantitative tools capable of outperforming traditional models at a fraction of the cost.",
     "sources": [
       "All About AI",
-      "Matt Wolfe",
-      "Fireship",
-      "Nick Saraev"
-    ],
-    "link": "https://www.youtube.com/watch?v=all-about-ai-gpt-5.6-trading-bot",
-    "date": "2026-07-15",
-    "category": "Quantitative Finance"
-  },
-  {
-    "title": "Enterprise Adoption of Production-Grade AI Agent Frameworks",
-    "summary": "Recent architectural developments, including Vercel Eve and Pydantic AI 2.0, signal a transition toward deterministic and highly structured AI agent systems. These frameworks address key corporate concerns regarding reliability, state management, and type-safe data integration. In sectors like shipping finance and maritime logistics, the ability to build reliable multi-agent systems enables the automation of complex compliance audits, charter-party contract parsing, and cash-flow forecasting. Analysts should monitor these engineering frameworks as they directly impact operational efficiency and cost structures in capital-intensive industries.",
-    "sources": [
-      "Cole Medin",
-      "David Ondrej",
+      "TheAIGRID",
       "Nick Saraev",
       "Leon van Zyl"
     ],
-    "link": "https://www.youtube.com/watch?v=cole-medin-vercel-eve-production-agents",
-    "date": "2026-07-16",
-    "category": "Enterprise Automation"
+    "link": "https://www.youtube.com/watch?v=example_kimi_k3_polymarket",
+    "date": "2026-07-22",
+    "category": "AI"
   },
   {
-    "title": "Country Risk and Sovereign Premiums in Global Valuation",
-    "summary": "For finance professionals executing cross-border M&A or maritime asset financing, pricing geopolitical and sovereign risk remains a critical operational challenge. Aswath Damodaran's 2026 framework emphasizes that country risk premiums must be dynamically integrated into the cost of capital rather than treated as static additions. Analysts targeting international private equity or shipping finance must rigorously model these risk adjustments directly into cash flows or discount rates to maintain valuation accuracy in volatile jurisdictions.",
+    "title": "Enterprise-Grade Agentic Frameworks and Financial Workflow Automation",
+    "summary": "Market adoption of autonomous AI agents is transitioning from experimental scripts to integrated enterprise solutions, highlighted by recent integrations into QuickBooks and Vercel's agentic frameworks. These setups enable businesses to automate accounting, software deployment, and multi-channel operations without custom software engineering. From a private equity perspective, the rapid deployment of systems like Hermes and Copilot Cowork offers immediate levers for EBITDA expansion across portfolio companies by minimizing back-office overhead.",
+    "sources": [
+      "Kevin Stratvert",
+      "Nick Puru | AI Automation",
+      "Cole Medin",
+      "David Ondrej"
+    ],
+    "link": "https://www.youtube.com/watch?v=example_quickbooks_ai_agents",
+    "date": "2026-07-17",
+    "category": "AI"
+  },
+  {
+    "title": "Operational Efficiency Gains via Claude Developer Ecosystem",
+    "summary": "The practical execution of business process automation has accelerated with the refinement of developer tools like Claude Code and integrated design features. Businesses are reporting up to 99% automation of administrative and front-end development tasks, significantly reducing capital expenditure on standard software engineering. Understanding these low-code and agentic development cycles is increasingly critical for assessing tech-stack efficiency and software valuations during mid-market M&A due diligence.",
+    "sources": [
+      "Nick Puru | AI Automation",
+      "Leon van Zyl",
+      "Jeff Su",
+      "Jotform"
+    ],
+    "link": "https://www.youtube.com/watch?v=example_claude_code_automation",
+    "date": "2026-07-17",
+    "category": "AI"
+  },
+  {
+    "title": "Integrating Sovereign Risk into Cross-Border Corporate Valuation",
+    "summary": "Valuation in cross-border M&A and shipping finance requires a rigorous adjustment for country risk beyond standard sovereign ratings. Analysts must dissect country risk premiums by evaluating political, legal, and economic structures rather than relying solely on default spreads. For private equity sponsors targeting international infrastructure or maritime assets, incorporating these adjusted discount rates is critical to avoiding overpayment in volatile jurisdictions. Ultimately, precise measurement of sovereign exposure ensures robust cash flow discounting and defensible investment theses.",
     "sources": [
       "Aswath Damodaran"
     ],
-    "link": "https://www.youtube.com/watch?v=AswathDamodaranCountryRisk2026",
+    "link": "https://www.youtube.com/watch?v=aswath_damodaran_country_risk_2026",
     "date": "2026-07-15",
-    "category": "Corporate Finance & Valuation"
-  },
-  {
-    "title": "Retail Market Distortions and Tightening Financial Promotion Regulation",
-    "summary": "The growing impact of retail-targeted financial promotions introduces unique liquidity and volatility dynamics to public equities, particularly in smaller-cap segments. While institutional investors focus on core fundamentals, sentiment-driven retail flows can create significant pricing anomalies that ECM teams must monitor. Anticipated regulatory interventions in this space are likely to reshape retail market participation and information dissemination channels.",
-    "sources": [
-      "The Plain Bagel"
-    ],
-    "link": "https://www.youtube.com/watch?v=ThePlainBagelFinfluencers2026",
-    "date": "2026-07-10",
-    "category": "Market Structure & Regulation"
+    "category": "Finance"
   }
 ]
