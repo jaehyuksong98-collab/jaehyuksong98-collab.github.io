@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insights — Jaehyuk Song</title>
+<meta name="description" content="Weekly insights on Finance, AI, and International affairs.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,219 +18,340 @@
     --navy:#0F1A2B;
     --navy-soft:#C9CFD8;
     --brass:#9C7A4A;
+    --brass-dim:#9C7A4A55;
+    --green:#4A7856;
     --hairline:#12181F1a;
     --max:920px;
     --display:'Source Serif 4', serif;
     --body:'Inter', sans-serif;
     --mono:'IBM Plex Mono', monospace;
   }
+
   *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
   body{
     margin:0;
     background:var(--bone);
     color:var(--ink);
     font-family:var(--body);
     line-height:1.55;
+    -webkit-font-smoothing:antialiased;
   }
-  a{ color:inherit; }
-  .wrap{ max-width:var(--max); margin:0 auto; padding:0 24px; }
 
-  header.top{
+  a{ color:inherit; }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- Nav ---------- */
+  .top-nav{
+    background:var(--navy);
+    padding:16px 0;
+    border-bottom:1px solid var(--brass-dim);
+  }
+  .top-nav .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .top-nav .brand{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.06em;
+    color:var(--navy-soft);
+    text-decoration:none;
+  }
+  .top-nav .brand:hover{ color:var(--bone); }
+  .top-nav .back{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--brass);
+    text-decoration:none;
+  }
+  .top-nav .back:hover{ color:var(--bone); }
+
+  /* ---------- Header ---------- */
+  .page-header{
     background:var(--navy);
     color:var(--bone);
     padding:48px 0 40px;
   }
-  header.top a.back{
+  .page-header .eyebrow{
     font-family:var(--mono);
-    font-size:12px;
-    letter-spacing:0.05em;
-    color:var(--navy-soft);
-    text-decoration:none;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin:0 0 12px;
   }
-  header.top a.back:hover{ color:var(--brass); }
-  header.top h1{
+  .page-header h1{
     font-family:var(--display);
     font-weight:500;
-    font-size:clamp(28px, 5vw, 38px);
-    margin:16px 0 0;
+    font-size:clamp(28px, 5vw, 40px);
+    line-height:1.12;
+    margin:0 0 16px;
+  }
+  .page-header .subtitle{
+    font-size:15px;
+    color:var(--navy-soft);
+    margin:0;
   }
 
-  main{ padding:40px 0 64px; }
-
-  /* Category tabs */
-  .tabs{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    margin-bottom:32px;
+  /* ---------- Filters ---------- */
+  .filters{
+    padding:24px 0;
     border-bottom:1px solid var(--hairline);
-    padding-bottom:0;
   }
-  .tab{
+  .filter-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .filter-btn{
+    display:inline-flex;
+    align-items:center;
     font-family:var(--mono);
     font-size:12px;
     letter-spacing:0.05em;
     text-transform:uppercase;
-    background:none;
-    border:none;
-    color:var(--ink-soft);
-    padding:10px 4px;
-    margin-right:20px;
-    cursor:pointer;
-    border-bottom:2px solid transparent;
-  }
-  .tab.active{
+    text-decoration:none;
+    padding:10px 18px;
+    border:1px solid var(--ink);
     color:var(--ink);
-    border-bottom-color:var(--brass);
-  }
-  .tab:focus-visible{ outline:2px solid var(--brass); outline-offset:2px; }
-
-  /* Entries */
-  details.entry{
-    border-top:1px solid var(--hairline);
-    padding:16px 0;
-  }
-  details.entry:first-of-type{ border-top:none; }
-  details.entry summary{
+    background:transparent;
     cursor:pointer;
-    list-style:none;
+    transition:background .15s ease, color .15s ease;
   }
-  details.entry summary::-webkit-details-marker{ display:none; }
-  .entry-date{
+  .filter-btn:hover{ background:var(--ink); color:var(--bone); }
+  .filter-btn.active{
+    background:var(--ink);
+    color:var(--bone);
+  }
+
+  /* ---------- Insights list ---------- */
+  .insights-section{
+    padding:32px 0 64px;
+  }
+  .insight-card{
+    padding:24px 0;
+    border-bottom:1px solid var(--hairline);
+  }
+  .insight-card:first-child{ padding-top:0; }
+  .insight-meta{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:8px;
+  }
+  .insight-date{
     font-family:var(--mono);
     font-size:11px;
     letter-spacing:0.05em;
     color:var(--ink-soft);
-    display:block;
-    margin-bottom:4px;
   }
-  .entry-headline{
+  .insight-cat{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--brass);
+    background:var(--brass-dim);
+    padding:2px 8px;
+    border-radius:2px;
+  }
+  .insight-card h3{
+    font-family:var(--body);
     font-weight:600;
-    font-size:15px;
+    font-size:16px;
+    margin:0 0 8px;
   }
-  .entry-body{
+  .insight-card h3 a{
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .insight-card h3 a:hover{
+    border-bottom-color:var(--brass);
+    color:var(--brass);
+  }
+  .insight-card p{
     font-size:14px;
     color:var(--ink-soft);
-    margin:10px 0 0;
-    padding-left:0;
+    margin:0 0 8px;
+    line-height:1.6;
   }
-
-  .empty{
+  .insight-sources{
     font-family:var(--mono);
-    font-size:13px;
+    font-size:11px;
     color:var(--ink-soft);
-    padding:24px 0;
+    letter-spacing:0.03em;
   }
 
-  @media (max-width:480px){
-    header.top{ padding:32px 0 28px; }
-    header.top h1{ font-size:24px; margin-top:12px; }
-    main{ padding:28px 0 48px; }
-    .tabs{ gap:4px; margin-bottom:24px; }
-    .tab{ font-size:11px; margin-right:14px; padding:8px 2px; }
-    .entry-headline{ font-size:14px; }
-    .entry-body{ font-size:13px; }
+  .empty-state{
+    text-align:center;
+    padding:64px 0;
+    color:var(--ink-soft);
+  }
+  .empty-state p{
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+
+  .loading{
+    text-align:center;
+    padding:64px 0;
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    letter-spacing:0.05em;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy);
+    color:var(--bone);
+    padding:32px 0;
+  }
+  .fine{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--navy-soft);
+    margin:0;
+    opacity:.7;
+    text-align:center;
+  }
+
+  @media (max-width:560px){
+    .filter-row{ gap:8px; }
+    .filter-btn{ padding:8px 14px; font-size:11px; }
   }
 </style>
 </head>
 <body>
 
-  <header class="top">
+  <nav class="top-nav">
     <div class="wrap">
-      <a class="back" href="./index.html">&larr; BACK TO MAIN PAGE</a>
-      <h1>Insights</h1>
+      <a class="brand" href="./index.html">JAEHYUK SONG</a>
+      <a class="back" href="./index.html">&larr; Back</a>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="wrap">
+      <p class="eyebrow">Insights</p>
+      <h1 id="page-title">Notes on finance, AI & the world</h1>
+      <p class="subtitle">Curated weekly — finance, technology, and global affairs.</p>
     </div>
   </header>
 
-  <main>
+  <div class="filters">
     <div class="wrap">
-      <nav class="tabs" id="tabs">
-        <button class="tab" data-cat="finance-ma">Finance &amp; M&amp;A</button>
-        <button class="tab" data-cat="ai">AI</button>
-        <button class="tab" data-cat="international">International Situation</button>
-      </nav>
-
-      <div id="entries"></div>
+      <div class="filter-row">
+        <button class="filter-btn" data-cat="all" onclick="filterInsights('all')">All</button>
+        <button class="filter-btn" data-cat="finance" onclick="filterInsights('finance')">Finance</button>
+        <button class="filter-btn" data-cat="ai" onclick="filterInsights('ai')">AI</button>
+        <button class="filter-btn" data-cat="international" onclick="filterInsights('international')">International</button>
+      </div>
     </div>
-  </main>
+  </div>
+
+  <div class="insights-section">
+    <div class="wrap">
+      <div id="insights-container">
+        <div class="loading">Loading insights...</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <p class="fine">Updated weekly</p>
+    </div>
+  </footer>
 
 <script>
-  // ---- Category definitions: value must match the "category" field in insights.json ----
-  const CATEGORIES = ["finance-ma", "ai", "international"];
-  let allEntries = [];
-  let activeCategory = CATEGORIES[0];
+let allInsights = [];
 
-  // Read ?cat= from the URL so a link from index.html can open directly
-  // into the right tab (e.g. insights.html?cat=ai)
-  const params = new URLSearchParams(window.location.search);
-  const requestedCat = params.get('cat');
-  if (requestedCat && CATEGORIES.includes(requestedCat)) {
-    activeCategory = requestedCat;
+const catMap = {
+  'all': null,
+  'finance': 'Finance',
+  'finance-ma': 'Finance',
+  'ai': 'AI',
+  'international': 'International'
+};
+
+const titles = {
+  'all': 'Notes on finance, AI & the world',
+  'finance': 'Finance & M&A',
+  'finance-ma': 'Finance & M&A',
+  'ai': 'Artificial Intelligence',
+  'international': 'International Situation'
+};
+
+async function loadInsights() {
+  const container = document.getElementById('insights-container');
+  try {
+    const res = await fetch('https://jaehyuksong98-collab.github.io/insights.json');
+    if (!res.ok) throw new Error('Failed to fetch');
+    allInsights = await res.json();
+    allInsights.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('cat') || 'all';
+    filterInsights(cat);
+  } catch (e) {
+    container.innerHTML = '<div class="empty-state"><p>Could not load insights. Check back later.</p></div>';
   }
+}
 
-  function renderTabs() {
-    document.querySelectorAll('.tab').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.cat === activeCategory);
-    });
-  }
+function filterInsights(cat) {
+  const container = document.getElementById('insights-container');
+  const titleEl = document.getElementById('page-title');
+  const targetCat = catMap[cat] || null;
 
-  function renderEntries() {
-    const container = document.getElementById('entries');
-    const filtered = allEntries
-      .filter(e => e.category === activeCategory)
-      // newest first
-      .sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    if (filtered.length === 0) {
-      container.innerHTML = '<p class="empty">No entries yet in this category.</p>';
-      return;
-    }
-
-    container.innerHTML = filtered.map(e => `
-      <details class="entry">
-        <summary>
-          <span class="entry-date">${formatDate(e.date)}</span>
-          <span class="entry-headline">${escapeHtml(e.headline)}</span>
-        </summary>
-        <p class="entry-body">${escapeHtml(e.summary)}</p>
-      </details>
-    `).join('');
-  }
-
-  function formatDate(iso) {
-    const d = new Date(iso);
-    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-  }
-
-  // Minimal escaping since content comes from an automated pipeline,
-  // not directly from user input in the browser — still safer to escape.
-  function escapeHtml(str) {
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
-  }
-
-  document.getElementById('tabs').addEventListener('click', (e) => {
-    const btn = e.target.closest('.tab');
-    if (!btn) return;
-    activeCategory = btn.dataset.cat;
-    renderTabs();
-    renderEntries();
+  // Update active filter button
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.cat === cat);
   });
 
-  // Fetch the data file. n8n updates insights.json in the repo each week;
-  // this page just reads whatever is currently committed — no backend needed.
-  fetch('./insights.json')
-    .then(res => res.json())
-    .then(data => {
-      allEntries = data;
-      renderTabs();
-      renderEntries();
-    })
-    .catch(() => {
-      document.getElementById('entries').innerHTML =
-        '<p class="empty">Could not load insights right now.</p>';
-    });
+  // Update title
+  titleEl.textContent = titles[cat] || titles['all'];
+
+  // Update URL without reload
+  const url = new URL(window.location);
+  if (cat === 'all') url.searchParams.delete('cat');
+  else url.searchParams.set('cat', cat);
+  history.replaceState(null, '', url);
+
+  // Filter
+  const filtered = targetCat
+    ? allInsights.filter(i => i.category === targetCat)
+    : allInsights;
+
+  if (filtered.length === 0) {
+    container.innerHTML = '<div class="empty-state"><p>No insights in this category yet.</p></div>';
+    return;
+  }
+
+  container.innerHTML = filtered.map(i => `
+    <div class="insight-card">
+      <div class="insight-meta">
+        <span class="insight-date">${i.date || ''}</span>
+        <span class="insight-cat">${i.category || ''}</span>
+      </div>
+      <h3>${i.title}</h3>
+      <p>${i.summary}</p>
+    </div>
+  `).join('');
+}
+
+loadInsights();
 </script>
 
 </body>
