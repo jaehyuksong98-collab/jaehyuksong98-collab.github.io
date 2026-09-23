@@ -22,6 +22,11 @@
 .stage-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .stage-card,.journal-topic{display:flex;flex-direction:column;align-items:start;text-decoration:none;padding:30px;background:var(--section-white);border:1px solid #b9c5b2;min-width:0;transition:background .2s}
 .stage-card:hover,.journal-topic:hover{background:#f3f4ea;color:var(--ink)}
+.map-node{transform-box:fill-box;transform-origin:center;transition:transform .2s ease}
+.stage-card{transform-origin:center;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+@media(hover:hover) and (pointer:fine){.map-node:hover{transform:scale(1.035)}.stage-card:hover{transform:scale(1.015);box-shadow:0 8px 22px #1728240c}}
+.map-node:focus-visible{transform:scale(1.035)}.stage-card:focus-visible{transform:scale(1.015)}
+@media(prefers-reduced-motion:reduce){.map-node:hover,.map-node:focus-visible,.stage-card:hover,.stage-card:focus-visible{transform:none}}
 .stage-card h3,.journal-topic h3{font-size:24px;margin:18px 0 14px}
 .stage-card p,.journal-topic p{font-size:14px;color:var(--muted);margin-bottom:24px}
 .stage-number{color:var(--muted)}
