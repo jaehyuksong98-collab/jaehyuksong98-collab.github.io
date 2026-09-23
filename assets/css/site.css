@@ -13,10 +13,10 @@
 .sector-map text[font-size="16"]{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:14px;font-weight:400;letter-spacing:0}
 .map-center-label{font-family:var(--sans);font-weight:400;letter-spacing:-.02em;font-size:16px}
 .project-card{min-width:0}.dcf-art>div{flex:1;min-width:0}
-.hero-focus{margin-bottom:18px;font-size:10px;letter-spacing:.1em}
+.map-caption{font-size:clamp(8px,.7vw,10px)}
 .hero-visual{padding-top:0}.sector-map{margin-bottom:20px}
 @media(min-width:1001px){.hero-grid{grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr);gap:40px}.hero-top{margin-bottom:24px}}
-@media(max-width:760px){.sector-map{max-width:580px;max-height:330px}.hero-focus{font-size:9px;margin-bottom:14px}}
+@media(max-width:760px){.sector-map{max-width:580px;max-height:330px}}
 .project-feature,.project-card{transition:transform .2s ease,box-shadow .2s ease}
 @media(hover:hover) and (pointer:fine){.project-feature:hover{transform:scale(1.01);box-shadow:0 14px 32px #17282418}.project-card:hover{transform:scale(1.015);box-shadow:0 10px 24px #17282410}}
 .project-feature:has(:focus-visible){transform:scale(1.01)}.project-card:has(:focus-visible){transform:scale(1.015)}
@@ -25,6 +25,10 @@
 .projects-archive{margin-block:48px 72px}.projects-archive .card-footer{flex-wrap:wrap;gap:14px}
 .project-cash-preview{margin:0 24px 24px}.project-cash-preview .scenario-panel{margin:0;padding:22px}.project-cash-preview .bar-row{margin:8px 0}.project-cash-preview .bar-track{height:18px}
 .project-feature>.card-art{background:#e8eadf;color:var(--ink);margin:20px;min-height:280px;align-self:stretch}.project-feature>.dcf-art{align-items:center}.project-feature-text{grid-template-columns:1fr}
+.timeline-item{text-decoration:none;color:var(--ink);transform-origin:center;transition:transform .2s ease,background .2s ease}.timeline-item h3{display:flex;justify-content:space-between;gap:12px}.timeline-arrow{font-size:13px;color:var(--muted);flex-shrink:0}.timeline-item:hover{color:var(--ink);background:#edf0e6}
+@media(hover:hover) and (pointer:fine){.timeline-item:hover{transform:scale(1.015)}}.timeline-item:focus-visible{transform:scale(1.015);background:#edf0e6}
+@media(prefers-reduced-motion:reduce){.timeline-item:hover,.timeline-item:focus-visible{transform:none}}
+.course-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 32px}.course-term h3,.course-current h3{font-size:18px}.course-term ul,.course-current ul{margin-top:0}.course-current{border-top:1px solid var(--line);margin-top:24px;padding-top:1px}@media(max-width:760px){.course-grid{grid-template-columns:minmax(0,1fr);gap:0}}
 @media(max-width:760px){.project-grid{grid-template-columns:minmax(0,1fr)}.project-card .card-footer{flex-wrap:wrap;gap:14px}.dcf-art{gap:8px;padding-inline:12px}}
 
 :root{--section-paper:#f5f3ec;--section-white:#fffefa;--section-sage:#e1e8dc}
