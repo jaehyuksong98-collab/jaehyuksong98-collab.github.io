@@ -58,3 +58,20 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
  const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){entry.target.animate([{opacity:.65,transform:'translateY(10px)'},{opacity:1,transform:'translateY(0)'}],{duration:400,easing:'ease-out'});observer.unobserve(entry.target);}}},{threshold:.12});
  document.querySelectorAll('.project-feature,.project-card,.editorial-feature').forEach(el=>observer.observe(el));
 }
+
+const projectFilters = [...document.querySelectorAll('[data-project-filter]')];
+if (projectFilters.length) {
+ const projectCards = [...document.querySelectorAll('[data-project]')];
+ function showProjectArea() {
+  const requested = location.hash.slice(1);
+  const area = projectFilters.some(link => link.dataset.projectFilter === requested) ? requested : 'all';
+  let count = 0;
+  projectCards.forEach(card => {card.hidden = area !== 'all' && card.dataset.projectArea !== area; if (!card.hidden) count++;});
+  projectFilters.forEach(link => link.setAttribute('aria-current', String(link.dataset.projectFilter === area)));
+  document.querySelector('#project-count').textContent = count + ' project' + (count === 1 ? '' : 's') + ' in this view';
+ }
+ projectFilters.forEach(link => link.addEventListener('click', event => {
+  event.preventDefault(); history.pushState(null, '', link.getAttribute('href')); showProjectArea();
+ }));
+ addEventListener('hashchange', showProjectArea); addEventListener('popstate', showProjectArea); showProjectArea();
+}
