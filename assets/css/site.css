@@ -119,3 +119,9 @@
 .project-areas a[aria-current=true]{background:var(--green);color:var(--white);border-color:var(--green)}
 
 .experience-list-title{font-size:22px;margin-bottom:24px}
+
+/* Spacious entry rows, with the whole row remaining a link. */
+.home-entry:not(#presence) .home-entry-link{padding-block:76px;min-height:240px}
+.entry-action{border:0;padding:0;font-size:27px;line-height:1;gap:0}
+.approach-archive .editorial-card-link:hover,.approach-archive .editorial-card-link:focus-visible{transform:none}
+@media(max-width:760px){.home-entry-link{display:grid;grid-template-columns:minmax(0,1fr) 24px;align-items:center;gap:18px}.home-entry:not(#presence) .home-entry-link{padding-block:56px;min-height:240px}.entry-action{font-size:24px;justify-self:end}}
