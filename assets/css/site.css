@@ -125,3 +125,16 @@
 .entry-action{border:0;padding:0;font-size:27px;line-height:1;gap:0}
 .approach-archive .editorial-card-link:hover,.approach-archive .editorial-card-link:focus-visible{transform:none}
 @media(max-width:760px){.home-entry-link{display:grid;grid-template-columns:minmax(0,1fr) 24px;align-items:center;gap:18px}.home-entry:not(#presence) .home-entry-link{padding-block:56px;min-height:240px}.entry-action{font-size:24px;justify-self:end}}
+
+/* Three-line introduction with a single, gentle phrase sequence. */
+.hero{padding-bottom:60px}
+.hero-copy{min-width:0}
+.hero-copy .hero-intro{max-width:none;font-size:14px;line-height:1.8}
+.intro-line{display:block}
+.intro-phrase{display:inline-block}
+.hero-copy .hero-interests{max-width:none;font-size:9px;line-height:1.8;letter-spacing:.055em;margin-top:14px}
+@media(prefers-reduced-motion:no-preference){.intro-phrase{animation:intro-arrive .6s ease both;animation-delay:calc(.3s + var(--phrase)*.27s)}}
+@keyframes intro-arrive{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.hero{padding-bottom:36px}.hero-copy .hero-intro{font-size:14px;line-height:1.8}.hero-copy .hero-interests{font-size:9px;margin-top:12px}}
+@media(min-width:1280px){.hero-copy .hero-intro{font-size:15px}}
+.hero-copy .hero-interests{font-size:10px}
