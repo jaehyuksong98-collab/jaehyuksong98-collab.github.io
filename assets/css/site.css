@@ -121,10 +121,10 @@
 .experience-list-title{font-size:22px;margin-bottom:24px}
 
 /* Spacious entry rows, with the whole row remaining a link. */
-.home-entry:not(#presence) .home-entry-link{padding-block:76px;min-height:240px}
+.home-entry:not(#presence) .home-entry-link{padding-block:100px;min-height:300px}
 .entry-action{border:0;padding:0;font-size:27px;line-height:1;gap:0}
 .approach-archive .editorial-card-link:hover,.approach-archive .editorial-card-link:focus-visible{transform:none}
-@media(max-width:760px){.home-entry-link{display:grid;grid-template-columns:minmax(0,1fr) 24px;align-items:center;gap:18px}.home-entry:not(#presence) .home-entry-link{padding-block:56px;min-height:240px}.entry-action{font-size:24px;justify-self:end}}
+@media(max-width:760px){.home-entry-link{display:grid;grid-template-columns:minmax(0,1fr) 24px;align-items:center;gap:18px}.home-entry:not(#presence) .home-entry-link{padding-block:72px;min-height:280px}.entry-action{font-size:24px;justify-self:end}}
 
 /* Three-line introduction with a single, gentle phrase sequence. */
 .hero{padding-bottom:60px}
@@ -172,3 +172,8 @@
 @media(hover:hover) and (prefers-reduced-motion:no-preference){.ai-tool-card:hover{transform:scale(1.015);background:#faf9f5}}
 @media(max-width:600px){.ai-tool-grid{grid-template-columns:1fr}.ai-tool-link{padding:22px;gap:18px}.tool-page-brand{gap:16px}.tool-page-brand img{width:40px;height:40px}}
 .ai-tool-link{text-decoration:none}.ai-tool-link:hover h3{text-decoration:underline;text-underline-offset:4px}
+
+/* DCF uses its dark document artwork edge to edge. */
+[data-project="dcf-analyzer"] .project-document{background:#0b1016}
+[data-project="dcf-analyzer"] .project-document img{object-fit:cover;object-position:center}
+.ai-tool-brand img[src$="n8n.svg"],.tool-page-brand img[src$="n8n.svg"]{width:72px;height:40px}
