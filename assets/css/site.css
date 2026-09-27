@@ -177,3 +177,14 @@
 [data-project="dcf-analyzer"] .project-document{background:#0b1016}
 [data-project="dcf-analyzer"] .project-document img{object-fit:cover;object-position:center}
 .ai-tool-brand img[src$="n8n.svg"],.tool-page-brand img[src$="n8n.svg"]{width:72px;height:40px}
+
+/* A sequential five-stage map: equal boxes, legible labels, consistent spacing. */
+.sector-map{max-height:none;max-width:520px;width:100%;height:auto;display:block;margin-inline:auto}
+.sector-map .map-heading{font:500 17px var(--sans);letter-spacing:0}
+.sector-map .map-detail{font:400 14px var(--sans);letter-spacing:0}
+.sector-map .map-step{font:500 11px var(--sans)}
+.sector-map .map-outcome{font:500 16px var(--sans)}
+.approach-archive .stage-illustration{aspect-ratio:600/340}
+.approach-archive .stage-illustration svg{width:100%;height:100%;object-fit:contain}
+[data-project="self-healing"] .project-document{background:#181818}
+[data-project="self-healing"] .project-document img{object-fit:cover}
