@@ -195,3 +195,10 @@
 
 .clarksons-table .data-table{min-width:650px}
 .article-sidebar>a[href*="clarksons"]{display:flex;width:fit-content;max-width:100%;margin-top:18px}
+
+/* Show the goal-to-follow-up sequence without moving the surrounding layout. */
+@media(prefers-reduced-motion:no-preference){
+ .sector-map.map-ready [data-map-reveal]{opacity:0}
+ .sector-map.map-ready.map-playing [data-map-reveal]{animation:map-step-in 420ms cubic-bezier(.22,1,.36,1) var(--map-delay) both}
+ @keyframes map-step-in{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
+}

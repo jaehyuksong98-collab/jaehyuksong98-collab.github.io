@@ -75,3 +75,30 @@ if (projectFilters.length) {
  }));
  addEventListener('hashchange', showProjectArea); addEventListener('popstate', showProjectArea); showProjectArea();
 }
+
+// Reveal the working sequence once, when the diagram enters the viewport.
+const mapMotionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+if ('IntersectionObserver' in window && !mapMotionPreference.matches) {
+ const maps = [...document.querySelectorAll('.sector-map')];
+ const mapObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+   if (!entry.isIntersecting) return;
+   entry.target.classList.add('map-playing');
+   mapObserver.unobserve(entry.target);
+  });
+ }, {threshold: .2});
+ maps.forEach(map => {
+  map.classList.add('map-ready');
+  mapObserver.observe(map);
+  // Keyboard access never waits for the decorative entrance to finish.
+  map.addEventListener('focusin', () => {
+   map.classList.remove('map-ready', 'map-playing');
+   mapObserver.unobserve(map);
+  }, {once: true});
+ });
+ mapMotionPreference.addEventListener('change', event => {
+  if (!event.matches) return;
+  mapObserver.disconnect();
+  maps.forEach(map => map.classList.remove('map-ready', 'map-playing'));
+ });
+}
