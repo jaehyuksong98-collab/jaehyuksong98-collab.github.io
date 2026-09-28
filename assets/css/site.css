@@ -202,3 +202,7 @@
  .sector-map.map-ready.map-playing [data-map-reveal]{animation:map-step-in 420ms cubic-bezier(.22,1,.36,1) var(--map-delay) both}
  @keyframes map-step-in{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
 }
+
+/* Working approach uses the same top-to-bottom sequence as the homepage. */
+.approach-sequence{padding-block:52px 80px}.approach-sequence .sector-map{max-width:600px}.sequence-guide{text-align:center;color:var(--muted);font-size:14px;margin-bottom:24px}
+@media(max-width:600px){.approach-sequence{padding-block:32px 48px}.sequence-guide{font-size:13px;margin-bottom:18px}}
