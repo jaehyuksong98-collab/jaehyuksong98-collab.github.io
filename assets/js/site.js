@@ -132,6 +132,7 @@ if (stageExplorer) {
   panels.forEach(p => {p.hidden = p !== panel;});
   reading.hidden = !node;
   layout.classList.toggle('is-open', !!node);
+  history.replaceState(null, '', location.pathname + location.search + (panel ? '#' + panel.id : ''));
   const svg = diagram.querySelector('svg');
   svg.classList.remove('map-ready', 'map-playing');
   const after = diagram.getBoundingClientRect();
@@ -160,4 +161,12 @@ if (stageExplorer) {
  function closeStage() {const previous=selected;showStage(null,false);previous?.focus({preventScroll:true});if(innerWidth <= 900) diagram.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}
  closeButton.addEventListener('click', closeStage);
  stageExplorer.addEventListener('keydown', event => {if(event.key === 'Escape' && selected){event.preventDefault();closeStage();}});
+ function openLinkedStage() {
+  const node = nodes.find(n => '#' + panelFor(n).id === location.hash);
+  if (!node) return;
+  showStage(node);
+  (innerWidth <= 900 ? reading : layout).scrollIntoView({behavior:'auto',block:'start'});
+ }
+ openLinkedStage();
+ window.addEventListener('hashchange', openLinkedStage);
 }
