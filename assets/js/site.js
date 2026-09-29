@@ -102,3 +102,62 @@ if ('IntersectionObserver' in window && !mapMotionPreference.matches) {
   maps.forEach(map => map.classList.remove('map-ready', 'map-playing'));
  });
 }
+
+// Keep the working diagram in view while reading a stage, with normal links as fallback.
+const stageExplorer = document.querySelector('[data-stage-explorer]');
+if (stageExplorer) {
+ const layout = stageExplorer.querySelector('.stage-explorer-layout');
+ const diagram = stageExplorer.querySelector('.stage-diagram');
+ const reading = stageExplorer.querySelector('.stage-reading');
+ const closeButton = stageExplorer.querySelector('.stage-close');
+ const nodes = [...diagram.querySelectorAll('.map-node')];
+ const panels = [...reading.querySelectorAll('.stage-detail')];
+ let selected = null;
+ let movement, entrance;
+ const panelFor = node => document.getElementById('stage-' + node.getAttribute('href').replace('working-', '').replace('.html', ''));
+ nodes.forEach(node => {
+  node.setAttribute('role', 'button');
+  node.setAttribute('aria-expanded', 'false');
+  node.setAttribute('aria-controls', panelFor(node).id);
+  node.setAttribute('tabindex', '0');
+ });
+ diagram.querySelector('desc').textContent = 'Five steps in order: set a goal, industry, data, finance, and automation. Choose a step to show its explanation on this page.';
+ function showStage(node, focus = true) {
+  const before = diagram.getBoundingClientRect();
+  const wasOpen = !!selected;
+  movement?.cancel(); entrance?.cancel();
+  selected = node;
+  const panel = node ? panelFor(node) : null;
+  nodes.forEach(n => n.setAttribute('aria-expanded', String(n === node)));
+  panels.forEach(p => {p.hidden = p !== panel;});
+  reading.hidden = !node;
+  layout.classList.toggle('is-open', !!node);
+  const svg = diagram.querySelector('svg');
+  svg.classList.remove('map-ready', 'map-playing');
+  const after = diagram.getBoundingClientRect();
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduced && diagram.animate) {
+   if (wasOpen !== !!node && innerWidth > 900) movement = diagram.animate([
+    {transform: `translate(${before.left-after.left}px, ${before.top-after.top}px) scale(${before.width/after.width})`},
+    {transform: 'none'}
+   ], {duration:650,easing:'cubic-bezier(.22,1,.36,1)'});
+   if (node) entrance = panel.animate([{opacity:0,transform:innerWidth>900?'translateX(20px)':'translateY(10px)'},{opacity:1,transform:'none'}],{duration:450,delay:wasOpen?0:220,fill:'backwards',easing:'ease-out'});
+  }
+  if (focus && panel) {
+   panel.querySelector('h2').focus({preventScroll:true});
+   if (innerWidth <= 900 || reading.getBoundingClientRect().top < 24) reading.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+  }
+ }
+ nodes.forEach(node => {
+  node.addEventListener('click', event => {
+   if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+   event.preventDefault(); showStage(node);
+  });
+  node.addEventListener('keydown', event => {
+   if (event.key === ' ' || event.key === 'Enter') {event.preventDefault();showStage(node);}
+  });
+ });
+ function closeStage() {const previous=selected;showStage(null,false);previous?.focus({preventScroll:true});if(innerWidth <= 900) diagram.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}
+ closeButton.addEventListener('click', closeStage);
+ stageExplorer.addEventListener('keydown', event => {if(event.key === 'Escape' && selected){event.preventDefault();closeStage();}});
+}
