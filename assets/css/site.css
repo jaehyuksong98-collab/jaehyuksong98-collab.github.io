@@ -211,3 +211,8 @@
 @media(max-width:900px){.stage-explorer-layout.is-open{grid-template-columns:1fr;gap:36px}.is-open .stage-diagram{position:static;width:min(600px,100%);margin-inline:auto}.stage-reading{border-top:1px solid var(--line);padding-top:26px;max-width:650px;margin-inline:auto;width:100%}.stage-detail>h2{font-size:28px}.stage-summary{font-size:15px}}
 
 .stage-detail>h2:focus{outline:none}
+
+/* Owner photo alongside the BI introduction; crop only the displayed frame. */
+.bi-experience-intro{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:start;margin-bottom:38px}.bi-experience-intro>section{margin-bottom:0}.bi-experience-photo{margin:0}.bi-experience-photo img{display:block;width:100%;height:auto;aspect-ratio:9/10;object-fit:cover;object-position:center bottom}
+@media(max-width:1100px){.bi-experience-intro{grid-template-columns:minmax(0,1fr) 220px;gap:24px}}
+@media(max-width:900px){.bi-experience-intro{grid-template-columns:1fr}.bi-experience-photo{width:min(300px,100%);margin-inline:auto}}
